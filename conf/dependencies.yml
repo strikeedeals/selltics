@@ -3,4 +3,3 @@
 require:
     - play
     - play-> gae 1.1
-    - play-> siena 1.5
