@@ -4,6 +4,10 @@
 
 GET     /					Application.index
 
+GET     /add					Application.add
+POST    /add					Application.addProduct
+
+GET     /admin              module:crud
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public

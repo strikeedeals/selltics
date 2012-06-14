@@ -1,0 +1,66 @@
+#{extends 'main.html' /}
+#{set title:'Add Product' /}
+
+<h1>Add Product to Selltics</h1>
+
+
+#{form @addProduct()}
+
+    <p><strong>Select Category</strong> : <select>
+#{list items:categories, as:'categoryItem'}
+			<option value="${categoryItem.catID}">
+				${categoryItem.catName}
+			</option>
+		#{/list}
+</select>
+</p>
+
+    #{field 'product.category'}
+        <p class="${field.errorClass}">
+            <strong>Category:</strong> <input type="text" name="${field.name}" size="16" value="${category?.category}"> *
+            <span class="error">${field.error}</span>
+        </p>
+    #{/field}
+    #{field 'product.subCategory'}
+        <p class="${field.errorClass}">
+            <strong>Subcategory:</strong> <input type="text" name="${field.name}" size="16" value="${subCategory?.subCategory}"> *
+            <span class="error">${field.error}</span>
+        </p>
+    #{/field} #{field 'product.name'}
+        <p class="${field.errorClass}">
+            <strong>Name :</strong> <input type="text" name="${field.name}" size="16" value="${name?.name}"> *
+            <span class="error">${field.error}</span>
+        </p>
+    #{/field}
+    
+    #{field 'product.dateTill'}
+        <p class="${field.errorClass}">
+            <strong>Available Till:</strong> <input type="text" name="${field.name}" size="16" value="${dateTill?.dateTill}"> *
+            <span class="error">${field.error}</span>
+        </p>
+    #{/field}
+    #{field 'product.rent'}
+        <p class="${field.errorClass}">
+            <strong>Rent/Day:</strong> <input type="text" name="${field.name}" size="16" value="${rent}"> *
+            <span class="error">${field.error}</span>
+        </p>
+    #{/field}    
+	
+#{field 'product.genre'}
+        <p class="${field.errorClass}">
+            <strong>Genre:</strong> <input type="text" name="${field.name}" size="16" value="${genre?.genre}"> *
+            <span class="error">${field.error}</span>
+        </p>
+    #{/field}  
+
+#{field 'product.anyKnownFaults'}
+        <p class="${field.errorClass}">
+            <strong>Any Known Faults:</strong> <input type="text" name="${field.name}" size="16" value="${anyKnownFaults?.anyKnownFaults}"> *
+            <span class="error">${field.error}</span>
+        </p>
+    #{/field} 
+
+    <p class="buttons">
+        <input type="submit" value="Add Product">    
+    </p>
+#{/form}
