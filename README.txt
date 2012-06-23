@@ -1,18 +1,16 @@
 This is the project for Selltics.
 Framework Used : Play 1.2.4
-Database Used : in memory DB
+Database Used : in memory DB for local and Postgress DB for Heroku
 
 
-Instructions for checking out and deploying to appengine.
-
-use GAE-module 1.1 for deploying to appengine, the same is mentioned in dependencies.yml
-
-- play-> gae 1.1
+Instructions for checking out and deploying to Heroku
 
 
-1) Download play framework 1.2.1 from www.playframework.org
 
-2) unzip the framework to play-1.2.1 directory and call it PLAY_HOME
+
+1) Download play framework 1.2.4 from www.playframework.org
+
+2) unzip the framework to play-1.2.4 directory and call it PLAY_HOME
 
 3) set your PATH env. variable point to PLAY_HOME
 
@@ -23,24 +21,25 @@ use GAE-module 1.1 for deploying to appengine, the same is mentioned in dependen
 	git clone https://github.com/strikeedeals/selltics.git
 
 
-5) install the play-gae modules in your local.	
+	
 
-	$ play install gae-1.1
+While running the application in local please change the following configurations ::
 
-6) Download google-appengine-sdk 1.4 in your local and extract and call it GAE_HOME.
+1. Uncomment db=mem
 
-7) go to Project home directory and run
+Comment the following lines
+db=${DATABASE_URL}
+jpa.dialect=org.hibernate.dialect.PostgreSQLDialect
+jpa.ddl=update
 
-	play gae:deploy 
+Revert the changes back while deploying it to Heroku .
 
-Note : GAE_HOME env. variable should be set and should point to appengine home directory.	
+2. Add the following line in application.conf file while running in local.
 
-
-Note : the above command will deploy your application to the application identifier specified in 
-
-PROJECT_HOME/war/WEB-INF/appengine-web.xml, change the appid accordingly.
+module.crud=${play.path}/modules/crud
 
 
+** Comment this line while deploying to Heroku .
 
 
 
