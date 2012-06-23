@@ -1,6 +1,6 @@
 This is the project for Selltics.
 Framework Used : Play 1.2.4
-Database Used : in memory DB for local and Postgress DB for Heroku
+Database Used : in memory DB for local and PostgreSQL 8.3 DB for Heroku.
 
 
 Instructions for checking out and deploying to Heroku
