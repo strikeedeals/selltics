@@ -1,5 +1,5 @@
 This is the project for Selltics.
-Framework Used : Play 1.2.1
+Framework Used : Play 1.2.4
 Database Used : in memory DB
 
 
