@@ -1,3 +1,13 @@
-	modules/
-	precompiled/
-
+modules/
+precompiled/
+bin/
+data/
+db/
+dist/
+logs/
+test-result/
+lib/
+tmp/
+modules/
+.gitconfig
+Procfile
